@@ -38,8 +38,8 @@ public class AppConfig {
     @Bean
     public OrderService orderService() {
         System.out.println("call AppConfig.orderService");
-//        return new OrderServiceImpl(memberRepository(), discountPolicy());
-        return null;
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
+//        return null;
     }
 
     // 가격정책을 바꾸고 싶을때 이것만 바꾸면된다.

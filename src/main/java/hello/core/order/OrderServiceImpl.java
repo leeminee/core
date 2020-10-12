@@ -3,6 +3,7 @@ package hello.core.order;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -27,7 +28,6 @@ public class OrderServiceImpl implements OrderService {
     // 생성자 주입
     @Autowired // 생성자가 하나일때는 Autowired가 안붙여있어도 디폴트로 붙은거로 인식한다.
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        System.out.println("1. OrderServiceImpl.OrderServiceImpl");
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
